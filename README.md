@@ -30,7 +30,7 @@ To deploy contracts, use check `scripts/deploy.ts` script and use following comm
 npm run deploy
 ```
 
-To mint and transfer token to the address, copy the deployed address of the contract from the previous command and replace it in line 79 of *mintAndTransfer.js*. and run the following command.
+To mint and transfer token to the address, copy the deployed address of the contract from the previous command and replace it in line 79 of `mintAndTransfer.js`. and run the following command.
 ```sh
 npx hardhat run scripts/mintAndTransfer.js
 ```
