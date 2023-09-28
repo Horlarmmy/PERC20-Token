@@ -7,14 +7,12 @@ import "./PERC20.sol";
 /**
  * @dev Sample implementation of the {PERC20} contract.
  */
-contract MyToken is PERC20 {
-    constructor() PERC20("Investor", "INV") {
-        _mint(_msgSender(), 100 * 10 ** 18);
-    }
+contract MyPrivateToken is PERC20 {
+    constructor() PERC20("Investor", "INV") {}
 
     /// @dev Wraps SWTR to PSWTR.
     receive() external payable {
-        _mint(_msgSender(), msg.value);
+        _mint(_msgSender(), msg.value * 1000);
     }
 
     /**

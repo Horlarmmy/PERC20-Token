@@ -1,7 +1,7 @@
 const { ethers } = require("hardhat");
 
 async function main() {
-  const perc20 = await ethers.deployContract("MyToken");
+  const perc20 = await ethers.deployContract("MyPrivateToken");
   await perc20.deployed();
 
   console.log(`MyToken was deployed to ${perc20.address}`);

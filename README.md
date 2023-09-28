@@ -1,13 +1,36 @@
-# Sample Hardhat Project
+# Example of PERC20 (Private ERC20)
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+This project demonstrates a basic PERC20 contract without comprensive access-control logic. The main differences between ERC20 and PERC20 are protected `balanceOf` function and disabled `Transfer` and `Approval` events
 
-Try running some of the following tasks:
+### Build
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
+To compile contracts, use following command:
+```sh 
+npm run compile
+```
+
+### Testing & Deployment
+
+<b>NOTE</b>: tests are not compatible with hardhat network / ganache, so you have to start Swisstronik local node or use public testnet
+
+Create `.env` file from example
+```sh
+cp example.env .env
+```
+Add `PRIVATE_KEY` in `.env` with actual private key to interact with network. If you're using other network than local testnet you also should replace `url` in `hardhat.config.ts`
+
+To run tests, use following command:
+
+```sh
+npm run test
+```
+
+To deploy contracts, use check `scripts/deploy.ts` script and use following command:
+```sh
+npm run deploy
+```
+
+To mint and transfer token to the address, copy the deployed address of the contract from the previous command and replace it in line 79 of *mintAndTransfer.js*. and run the following command.
+```sh
+npx hardhat run scripts/mintAndTransfer.js
 ```
